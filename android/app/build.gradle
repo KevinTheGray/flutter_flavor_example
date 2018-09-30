@@ -48,6 +48,18 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        development {
+            dimension "default"
+            buildConfigField("String", "FLAVOR_CONFIGURATION", '"development"')
+        }
+        production {
+            dimension "default"
+            buildConfigField("String", "FLAVOR_CONFIGURATION", '"production"')
+        }
+    }
 }
 
 flutter {
